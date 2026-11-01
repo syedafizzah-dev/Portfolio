@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Syeda Fizza Saeed — Designer & Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#12061f;--bg2:#1d0b35;--ink:#fdeeff;--mute:#cbb6e0;--pink:#ff3fa4;--violet:#a66bff;--mint:#38f9d7;--card:rgba(255,255,255,.05);--line:rgba(255,255,255,.13);--glow:0 0 22px rgba(255,63,164,.55);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+:root[data-theme="light"]{--bg:#fff3fb;--bg2:#ffe3f4;--ink:#2b0f44;--mute:#6b4d86;--pink:#e0127f;--violet:#7b3fe4;--mint:#009c86;--card:rgba(255,255,255,.75);--line:rgba(43,15,68,.15);--glow:0 0 18px rgba(224,18,127,.3);color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Figtree,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:60}
+h1,h2,h3{font-family:Syne,system-ui,sans-serif;line-height:1.05;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--mint);outline-offset:3px;border-radius:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+section{padding:84px 0}
+h2{font-size:clamp(2rem,5vw,3rem);margin-bottom:34px;background:linear-gradient(90deg,var(--pink),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-family:Syne;font-weight:800;text-decoration:none;color:var(--pink);text-shadow:var(--glow);white-space:nowrap}
+.links{display:flex;gap:20px;align-items:center;overflow-x:auto;scrollbar-width:none}
+.links a{text-decoration:none;font-size:.92rem;color:var(--mute);white-space:nowrap}
+.links a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1rem;flex:none}
+/* hero */
+.hero{min-height:calc(100svh - 60px);display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 0}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;pointer-events:none;animation:drift 14s ease-in-out infinite alternate}
+.o1{width:380px;height:380px;background:var(--pink);top:-80px;right:-60px}
+.o2{width:320px;height:320px;background:var(--violet);bottom:-90px;left:-70px;animation-delay:-5s}
+.o3{width:220px;height:220px;background:var(--mint);top:40%;left:55%;opacity:.3;animation-delay:-9s}
+@keyframes drift{to{transform:translate(40px,-30px) scale(1.15)}}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,63,164,.22),transparent 65%);transform:translate(-50%,-50%);z-index:0;left:-400px;top:-400px}
+.hero .wrap{position:relative;z-index:1}
+.hi{display:inline-block;padding:6px 16px;border:1px solid var(--pink);border-radius:99px;color:var(--pink);box-shadow:var(--glow);font-weight:600;font-size:.9rem;margin-bottom:22px}
+h1{font-size:clamp(2.2rem,10.5vw,7.4rem);font-weight:800;letter-spacing:-.02em}
+h1 .ln{display:block;white-space:nowrap}
+h1 .ch{display:inline-block;background:linear-gradient(180deg,var(--ink) 10%,var(--pink) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;animation:rise .8s cubic-bezier(.2,.9,.25,1.2) both;filter:drop-shadow(0 0 14px rgba(255,63,164,.45))}
+@keyframes rise{from{opacity:0;transform:translateY(60px) rotate(8deg)}}
+.role{font-size:clamp(1.1rem,3vw,1.6rem);margin:22px 0 10px;color:var(--mint);font-weight:600;min-height:2em}
+.role::after{content:"|";margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{max-width:560px;color:var(--mute);font-size:1.08rem}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-block;padding:13px 26px;border-radius:99px;font-weight:600;text-decoration:none;transition:transform .25s,box-shadow .25s}
+.btn.p{background:linear-gradient(90deg,var(--pink),var(--violet));color:#fff;box-shadow:var(--glow)}
+.btn.s{border:1.5px solid var(--mint);color:var(--mint)}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+/* marquee */
+.mq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:16px 0}
+.mq div{display:flex;gap:46px;width:max-content;animation:scroll 28s linear infinite}
+.mq span{font-family:Syne;font-weight:600;font-size:1.15rem;color:var(--violet);white-space:nowrap}
+.mq span:nth-child(3n){color:var(--pink)}.mq span:nth-child(3n+1){color:var(--mint)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+/* about */
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:40px;align-items:start}
+.about p{margin:0 0 16px;color:var(--mute);font-size:1.05rem;max-width:62ch}
+.facts{display:grid;gap:12px}
+.fact{padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:var(--card)}
+.fact b{display:block;font-family:Syne;color:var(--pink)}
+/* timeline */
+.tl{position:relative;padding-left:30px;border-left:2px solid var(--line);display:grid;gap:26px}
+.job{position:relative;padding:20px 22px;border:1px solid var(--line);border-radius:20px;background:var(--card);transition:border-color .3s,box-shadow .3s,transform .3s}
+.job:hover{border-color:var(--pink);box-shadow:var(--glow);transform:translateX(6px)}
+.job::before{content:"";position:absolute;left:-39px;top:26px;width:16px;height:16px;border-radius:50%;background:var(--pink);box-shadow:var(--glow)}
+.job h3{font-size:1.25rem}.job .co{color:var(--mint);font-weight:600}
+.job .dt{float:right;color:var(--mute);font-size:.88rem}
+.job p{margin:10px 0 0;color:var(--mute)}
+/* skills */
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px}
+.box{padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--card)}
+.box h3{font-size:1.1rem;margin-bottom:14px;color:var(--ink)}
+.box{cursor:pointer;transition:transform .3s,border-color .3s,box-shadow .3s,background .3s}
+.box:hover{border-color:var(--violet)}
+.box.on{border-color:var(--pink);background:linear-gradient(145deg,rgba(255,63,164,.22),rgba(166,107,255,.2));box-shadow:0 0 28px rgba(255,63,164,.5),inset 0 0 18px rgba(255,63,164,.12);transform:translateY(-6px) scale(1.02)}
+.box.on h3{color:var(--pink);text-shadow:var(--glow)}
+.box.on .chips span{border-color:var(--mint);color:var(--mint);box-shadow:0 0 10px rgba(56,249,215,.35)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:6px 14px;border-radius:99px;border:1px solid var(--violet);font-size:.88rem;transition:all .25s;cursor:default}
+.chips span:hover{background:var(--violet);color:#fff;box-shadow:0 0 16px var(--violet);transform:translateY(-2px)}
+/* work */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.tile{aspect-ratio:4/3;border-radius:22px;padding:18px;display:flex;align-items:flex-end;font-family:Syne;font-weight:800;font-size:1.15rem;color:#fff;position:relative;overflow:hidden;transition:transform .35s,box-shadow .35s}
+.tile::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.22);top:-30px;right:-30px;transition:transform .5s}
+.tile:hover{transform:rotate(-1.5deg) scale(1.04);box-shadow:var(--glow)}
+.tile:hover::after{transform:scale(2.2)}
+.t1{background:linear-gradient(135deg,#ff3fa4,#a66bff)}.t2{background:linear-gradient(135deg,#a66bff,#2fd9ff)}.t3{background:linear-gradient(135deg,#ff6ad5,#ffb86b)}
+.t4{background:linear-gradient(135deg,#1fd8b8,#a66bff)}.t5{background:linear-gradient(135deg,#ff3fa4,#ff9f6b)}.t6{background:linear-gradient(135deg,#7b5cff,#ff3fa4)}
+.note{color:var(--mute);margin-top:18px;max-width:62ch}
+.proj{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.pc{padding:24px;border:1px solid var(--line);border-radius:22px;background:var(--card);position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,border-color .3s,box-shadow .3s}
+.pc::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--pink),var(--violet),var(--mint))}
+.pc:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:var(--glow)}
+.pc h3{font-size:1.3rem;margin:6px 0 10px}
+.pc p{color:var(--mute);margin:0 0 16px;flex:1}
+.pc .chips{margin-bottom:18px}
+.pc a{color:var(--mint);font-weight:600;text-decoration:none}
+.pc a:hover{text-decoration:underline}
+.more{margin-top:26px}
+.shot{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px;text-decoration:none!important;transition:transform .3s,box-shadow .3s}
+.shot:hover{transform:scale(1.03);box-shadow:var(--glow)}
+.bar{display:flex;gap:5px;padding:7px 10px;background:rgba(127,127,127,.25)}
+.bar i{width:8px;height:8px;border-radius:50%;background:var(--pink)}.bar i:nth-child(2){background:var(--violet)}.bar i:nth-child(3){background:var(--mint)}
+.scr{aspect-ratio:16/10;padding:12px 16px;display:flex;flex-direction:column;justify-content:center;gap:7px;font-size:10px;line-height:1.3;font-family:Figtree,sans-serif}
+.scr b{font-family:Syne,sans-serif;font-size:20px;line-height:1.05;display:block;max-width:210px}
+.scr small{font-size:9px;opacity:.75}
+.scr em{font-style:normal;display:inline-block;padding:4px 11px;border-radius:99px;font-size:9px;font-weight:600;width:fit-content}
+.scr .fld{border:1px solid rgba(255,255,255,.55);border-radius:6px;padding:5px 9px;width:62%;font-size:10px}
+.m1 .scr{background:#f3eee6;color:#2a2622}.m1 em{background:#2a2622;color:#f3eee6}
+.m2 .scr{background:linear-gradient(135deg,#1b1340,#3a1c71);color:#fff}.m2 em{background:#ff3fa4;color:#fff}
+.m3 .scr{background:linear-gradient(135deg,#0f2a4a,#1b6ca8);color:#fff}.m3 em{background:#fff;color:#0f2a4a}
+.act{display:flex;gap:10px;flex-wrap:wrap}
+.pc a.btn{text-decoration:none}.pc a.btn.p{color:#fff}.pc a.btn.s{color:var(--mint)}
+.sm{padding:9px 20px;font-size:.9rem}
+/* contact */
+.contact{text-align:center}
+.contact h2{margin-inline:auto}
+.contact p{color:var(--mute);max-width:520px;margin:0 auto 26px}
+.contact .cta{justify-content:center}
+footer{text-align:center;padding:26px;color:var(--mute);font-size:.88rem;border-top:1px solid var(--line)}
+@media(max-width:760px){.sk{gap:14px}.box{padding:18px}.box h3{margin-bottom:12px}.chips span{padding:5px 12px;font-size:.85rem}.about{grid-template-columns:1fr}.job .dt{float:none;display:block}.links a:nth-child(n+5){display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}#glow{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="#top">Fizza ✦</a>
+<div class="links"><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#work">Design</a><a href="#contact">Contact</a></div>
+<button id="theme" aria-label="Switch light or dark theme">☾</button>
+</div></nav>
+<div id="glow"></div>
+
+<header class="hero" id="top">
+<div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div>
+<div class="wrap">
+<span class="hi">Open to internships &amp; junior roles</span>
+<h1 aria-label="Syeda Fizza Saeed"><span class="ln" data-split>Syeda Fizza</span><span class="ln" data-split>Saeed</span></h1>
+<div class="role" id="role">Graphic Designer</div>
+<p class="lead">Computer Science student who designs for people and builds for the web. Four years of design work, plus HTML, CSS, JavaScript, Python, SQL and applied AI.</p>
+<div class="cta"><a class="btn p" href="#contact">Hire me</a><a class="btn s" href="#experience">See my experience</a></div>
+</div>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about"><div class="wrap">
+<h2>About me</h2>
+<div class="about">
+<div>
+<p>I’m a detail-oriented Computer Science undergraduate at SSUET, Karachi. I’ve been designing since 2022, and I now pair that eye for typography, color and composition with real code: responsive web pages, Python automation and SQL databases.</p>
+<p>I use generative AI and prompt engineering every day to research, ideate and ship faster. I own projects from first idea to final delivery, and I learn new tools quickly.</p>
+</div>
+<div class="facts">
+<div class="fact"><b>4+ years</b>of graphic design</div>
+<div class="fact"><b>BS Computer Science</b>Sir Syed University of Engineering and Technology</div>
+<div class="fact"><b>Karachi, Pakistan</b>Available for remote and on-site work</div>
+</div>
+</div>
+</div></section>
+
+<section id="experience" style="background:var(--bg2)"><div class="wrap">
+<h2>Experience</h2>
+<div class="tl">
+<div class="job"><span class="dt">2026 – Present</span><h3>Web Development &amp; Designing Intern</h3><div class="co">Oasis Infobyte</div><p>Building and designing web projects in a professional, project-based environment.</p></div>
+<div class="job"><span class="dt">2026 – Present</span><h3>Sales Engineering Intern (Business Consultant)</h3><div class="co">ITVE PVT LTD</div><p>Client-facing technical consulting and solution-focused communication.</p></div>
+<div class="job"><span class="dt">2022 – Present</span><h3>Graphic Designer</h3><div class="co">Self-directed &amp; personal projects</div><p>Social media creatives, posters, presentations, certificates and invitations made in Canva, from concept to final delivery.</p></div>
+<div class="job"><span class="dt">2024</span><h3>Social Media Marketing Intern</h3><div class="co">Erudite Coaching Centre (ECC)</div><p>Hands-on content planning and digital engagement strategy.</p></div>
+<div class="job"><span class="dt">Present</span><h3>Independent Web Developer</h3><div class="co">Self-initiated projects</div><p>Designing and coding responsive websites and web apps on my own, from landing pages to small tools, while continuously learning new technologies.</p></div>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<h2>Skills</h2>
+<div class="sk">
+<div class="box"><h3>Graphic design</h3><div class="chips"><span>Canva</span><span>Social media design</span><span>Presentation design</span><span>Digital branding</span><span>Visual content</span></div></div>
+<div class="box"><h3>Web development</h3><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive layouts</span><span>VS Code</span></div></div>
+<div class="box"><h3>Programming &amp; data</h3><div class="chips"><span>Python</span><span>Problem solving</span><span>SQL</span><span>Relational databases</span><span>Query writing</span></div></div>
+<div class="box"><h3>AI</h3><div class="chips"><span>Generative AI</span><span>Prompt engineering</span><span>AI-assisted content</span></div></div>
+</div>
+<p class="note">Certified in Generative AI (Google, via Coursera). Comfortable with Microsoft Office. Strengths: leadership, communication, adaptability.</p>
+</div></section>
+
+<section id="projects" style="background:var(--bg2)"><div class="wrap">
+<h2>Projects</h2>
+<div class="proj">
+<div class="pc"><a class="shot m1" href="https://syedafizzah-dev.github.io/OIBSIP/lumora/" target="_blank" rel="noopener" aria-label="Open the LUMORA live demo"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><span>LUMORA. &nbsp; Home &nbsp; Collection &nbsp; About</span><small>Modern living, simplified</small><b>Make space for what matters.</b><em>Explore Collection</em></div></a><h3>LUMORA</h3><p>A responsive landing page for a modern-living brand, with a clear hero, collection, philosophy and call-to-action sections.</p><div class="chips"><span>HTML5</span><span>CSS3</span><span>Responsive design</span></div><div class="act"><a class="btn p sm" href="https://syedafizzah-dev.github.io/OIBSIP/lumora/" target="_blank" rel="noopener">Live demo</a><a class="btn s sm" href="https://github.com/syedafizzah-dev" target="_blank" rel="noopener">Code</a></div></div>
+<div class="pc"><a class="shot m3" href="https://syedafizzah-dev.github.io/OIBSIP/temperature-converter/" target="_blank" rel="noopener" aria-label="Open the Tempora live demo"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><b>Convert temperatures with ease.</b><div class="fld">25 &nbsp; °C &nbsp; °F &nbsp; K</div><em>Convert Temperature →</em></div></a><h3>Tempora</h3><p>A modern temperature converter. Enter a value, choose the unit and convert between Celsius, Fahrenheit and Kelvin.</p><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><div class="act"><a class="btn p sm" href="https://syedafizzah-dev.github.io/OIBSIP/temperature-converter/" target="_blank" rel="noopener">Live demo</a><a class="btn s sm" href="https://github.com/syedafizzah-dev" target="_blank" rel="noopener">Code</a></div></div>
+<div class="pc"><a class="shot m2" href="https://syedafizzah-dev.github.io/OIBSIP/portfolio/" target="_blank" rel="noopener" aria-label="Open the Personal Portfolio live demo"><div class="bar"><i></i><i></i><i></i></div><div class="scr"><small>Web development &amp; designing</small><b>Hi, I’m Syeda Fizza Saeed</b><span>Web Developer &amp; Designer</span><em>View My Work</em></div></a><h3>Personal Portfolio</h3><p>A clean one-page portfolio with About, Skills and Projects sections that introduces me as a web developer and designer.</p><div class="chips"><span>HTML5</span><span>CSS3</span><span>Responsive design</span></div><div class="act"><a class="btn p sm" href="https://syedafizzah-dev.github.io/OIBSIP/portfolio/" target="_blank" rel="noopener">Live demo</a><a class="btn s sm" href="https://github.com/syedafizzah-dev" target="_blank" rel="noopener">Code</a></div></div>
+</div>
+<a class="btn s more" href="https://github.com/syedafizzah-dev" target="_blank" rel="noopener">More on GitHub</a>
+</div></section>
+
+<section id="work"><div class="wrap">
+<h2>Design work</h2>
+<div class="work">
+<div class="tile t1">Social media creatives</div><div class="tile t2">Posters</div><div class="tile t3">Presentations</div>
+<div class="tile t4">Certificates</div><div class="tile t5">Invitations</div><div class="tile t6">Promotional material</div>
+</div>
+<p class="note">Samples available on request.</p>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Let’s work together</h2>
+<p>Looking for a designer who also codes? Send me a message and I’ll reply quickly.</p>
+<div class="cta">
+<a class="btn p" href="mailto:syedafizzasaeed@gmail.com">Email me</a>
+<a class="btn s" href="https://linkedin.com/in/fizzahshah" target="_blank" rel="noopener">LinkedIn</a>
+
+</div>
+</div></section>
+<footer>© <span id="yr"></span> Syeda Fizza Saeed</footer>
+
+<script>
+(function(){
+var root=document.documentElement,btn=document.getElementById('theme'),t='dark';
+try{t=localStorage.getItem('fz-theme')||'dark'}catch(e){}
+function set(v){root.setAttribute('data-theme',v);btn.textContent=v==='dark'?'☾':'☀';try{localStorage.setItem('fz-theme',v)}catch(e){}}
+set(t);btn.onclick=function(){set(root.getAttribute('data-theme')==='dark'?'light':'dark')};
+var i=0;document.querySelectorAll('[data-split]').forEach(function(el){var s=el.textContent;el.textContent='';
+s.split('').forEach(function(c){var sp=document.createElement('span');sp.className='ch';sp.textContent=c===' '?'\u00a0':c;sp.style.animationDelay=(i++*55)+'ms';el.appendChild(sp)})});
+var roles=['Graphic Designer','Web Developer','AI-Driven Problem Solver'],r=0,el=document.getElementById('role');
+setInterval(function(){r=(r+1)%roles.length;el.textContent=roles[r]},2600);
+var sk=['Canva','HTML','CSS','JavaScript','Python','SQL','Generative AI','Prompt engineering','Social media design','Branding','VS Code'],h='';
+for(var k=0;k<2;k++)sk.forEach(function(x){h+='<span>'+x+' ✦</span>'});
+document.getElementById('mq').innerHTML=h;
+var g=document.getElementById('glow');
+if(matchMedia('(pointer:fine)').matches)addEventListener('mousemove',function(e){g.style.left=e.clientX+'px';g.style.top=e.clientY+'px'});
+document.getElementById('yr').textContent=new Date().getFullYear();
+var boxes=document.querySelectorAll('.box');
+boxes.forEach(function(b){b.tabIndex=0;b.setAttribute('role','button');b.setAttribute('aria-pressed','false');
+function tg(){var on=!b.classList.contains('on');boxes.forEach(function(x){x.classList.remove('on');x.setAttribute('aria-pressed','false')});if(on){b.classList.add('on');b.setAttribute('aria-pressed','true')}}
+b.addEventListener('click',tg);b.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tg()}})});
+})();
+</script>
+</body>
+</html>
